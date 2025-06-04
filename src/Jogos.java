@@ -3,14 +3,14 @@ public class Jogos extends Produtos {
     private String plataforma;
     private String publisher;
 
-    public Jogos(String nome, double preco, int quantidade,
-                 String genero, String plataforma, String publisher) {
-        super(nome, preco, quantidade); // Chama o construtor da superclasse
+    public Jogos(int id, String nome, double preco, int quantidade, String genero, String plataforma, String publisher) {
+        super(id, nome, preco, quantidade);
         this.genero = genero;
         this.plataforma = plataforma;
         this.publisher = publisher;
     }
 
+    // Getters e Setters
     public String getGenero() { return genero; }
     public void setGenero(String genero) { this.genero = genero; }
 
@@ -22,10 +22,18 @@ public class Jogos extends Produtos {
 
     @Override
     public void mostrar() {
-        super.mostrar(); // Exibe dados de Produtos
-        System.out.println("== Jogos ==");
+        System.out.println("ID: " + getId());
+        System.out.println("Nome: " + getNome());
+        System.out.println("Preço: R$ " + getPreco());
+        System.out.println("Quantidade: " + getQuantidade());
         System.out.println("Gênero: " + genero);
         System.out.println("Plataforma: " + plataforma);
         System.out.println("Publisher: " + publisher);
+    }
+
+    @Override
+    public String salvar() {
+        // Formato para salvar no arquivo: Tipo;id;nome;preco;quantidade;genero;plataforma;publisher
+        return "jogos;" + getId() + ";" + getNome() + ";" + getPreco() + ";" + getQuantidade() + ";" + genero + ";" + plataforma + ";" + publisher;
     }
 }

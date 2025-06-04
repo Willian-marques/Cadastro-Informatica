@@ -1,0 +1,4 @@
+jogos;3;q;1.0;6;q;q;q
+informatica;4;q;1.0;1;q;q
+informatica;5;1;1.0;1;s;s
+jogos;6;tet;1.0;1;h;nb;a
